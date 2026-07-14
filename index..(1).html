@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Destinos Turísticos Ecuador</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+
+<header>
+
+    <div class="logo">Destinos Turísticos</div>
+
+    <nav class="menu">
+
+        <a href="index..(1).html" class="activo">Inicio</a>
+
+        <a href="viajes.html">Viajes</a>
+
+        <a href="contacto.html">Contacto</a>
+
+    </nav>
+</header>
+<section id="inicio" class="slider">
+    <!-- Formulario -->
+    <div class="contenido">
+    <span id="lugar">manta</span>
+
+    <h1 id="titulo">
+        playa tarqui
+    </h1>
+
+    <p id="descripcion">
+        es una extensa franja costera urbana ubicada en Manta, Ecuador.
+    </p>
+
+    <a id="botonDestino" href="#" target="_blank">
+        <button>Descubrir destino</button>
+    </a>
+</div>
+
+    <div class="controles">
+        <button onclick="anterior()">❮</button>
+        <button onclick="siguiente()">❯</button>
+    </div>
+
+    <div class="miniaturas">
+
+    <div class="card active" onclick="mostrar(0)">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/0a/ab/ba/87/playa-de-tarqui.jpg?w=500">
+        <h3>playa tarqui </h3>
+    </div>
+
+    <div class="card" onclick="mostrar(1)">
+        <img src="https://www.roamingaroundtheworld.com/wp-content/uploads/2019/03/Cuenca-sign.jpg?w=500">
+        <h3>cuenca</h3>
+    </div>
+
+    <div class="card" onclick="mostrar(2)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtHjzaA31A2RcgCD2Q98F_uD3zMMhyASU4UV4-fiRH3w&s=10?w=500">
+        <h3>montañita</h3>
+    </div>
+
+  </div>
+</section>
+
+<script>
+    const destinos = [
+{
+    lugar: "Manta",
+    nombre: "playa-de-tarqui",
+    descripcion: " es una extensa franja costera urbana ubicada en Manta, Ecuador.",
+    imagen: "https://media-cdn.tripadvisor.com/media/photo-s/0a/ab/ba/87/playa-de-tarqui.jpg?w=1600",
+    enlace: "https://www.google.com/imgres?q=manta%20playa%20tarqui&imgurl=https%3A%2F%2Fwww.tiktok.com%2Fapi%2Fimg%2F%3FitemId%3D7348247680453201158%26location%3D0%26aid%3D1988&imgrefurl=https%3A%2F%2Fwww.tiktok.com%2F%40_leoand%2Fvideo%2F7348247680453201158&docid=EIzg29Yo6BHPbM&tbnid=Rm-32SFECtTbJM&vet=12ahUKEwjb-reFvJ2VAxVURzABHbErEzEQnPAOegQINhAA..i&w=1080&h=1920&hcb=2&ved=2ahUKEwjb-reFvJ2VAxVURzABHbErEzEQnPAOegQINhAA"
+},
+{
+    lugar: "Cuenca",
+    nombre: "centro de cuenca ",
+    descripcion: "porción de terreno deprimida o hundida por la que el agua de lluvia o el deshielo fluye y se concentra hacia un punto común, como un río, lago o el mar.",
+    imagen: "https://www.roamingaroundtheworld.com/wp-content/uploads/2019/03/Cuenca-sign.jpg?w=1600",
+    enlace: "https://www.google.com/imgres?q=cuenca&imgurl=https%3A%2F%2Fi.ytimg.com%2Fvi%2F6lABBjfUL6M%2Fmaxresdefault.jpg&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D6lABBjfUL6M&docid=QY4lbujMDrKDnM&tbnid=UUIXShMZJaZxtM&vet=12ahUKEwirsu6Qu52VAxU1TDABHVWvNqEQnPAOegUIjAEQAA..i&w=1280&h=720&hcb=2&ved=2ahUKEwirsu6Qu52VAxU1TDABHVWvNqEQnPAOegUIjAEQAA"
+},
+{
+    lugar: "montañita",
+    nombre: "playa montañita ",
+    descripcion: "Montañita es una aldea de la península de Santa Elena en Ecuador, conocida por sus playas con fuertes rompientes del oleaje y su ambiente bohemio. ",
+    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtHjzaA31A2RcgCD2Q98F_uD3zMMhyASU4UV4-fiRH3w&s=10?w=1600",
+    enlace: "https://www.google.com/imgres?q=monta%C3%B1ita&imgurl=https%3A%2F%2Fi.ytimg.com%2Fvi%2F9eKvS5u321Q%2Fhq720.jpg%3Fsqp%3D-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD%26rs%3DAOn4CLCOLOpNCeaNS9MwGglCF-E9OQv5Cw&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D9eKvS5u321Q&docid=ItsIoIUvc23dOM&tbnid=IcQVFvQV3-QeIM&vet=12ahUKEwjQ0MuUvZ2VAxWWRTABHWycA7sQnPAOegUIsAEQAA..i&w=686&h=386&hcb=2&ved=2ahUKEwjQ0MuUvZ2VAxWWRTABHWycA7sQnPAOegUIsAEQAA"
+}
+];
+
+let actual = 0;
+
+function mostrar(i) {
+    actual = i;
+
+    const slider = document.querySelector(".slider");
+
+slider.style.backgroundImage =
+`linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
+url(${destinos[i].imagen})`;
+
+    document.getElementById("lugar").textContent =
+        destinos[i].lugar;
+
+    document.getElementById("titulo").textContent =
+        destinos[i].nombre;
+
+    document.getElementById("descripcion").textContent =
+        destinos[i].descripcion;
+
+    document.getElementById("botonDestino").href =
+        destinos[i].enlace;
+
+    document.querySelectorAll(".card")
+        .forEach(card => card.classList.remove("active"));
+
+    document.querySelectorAll(".card")[i]
+        .classList.add("active");
+}
+
+function siguiente() {
+    actual = (actual + 1) % destinos.length;
+    mostrar(actual);
+}
+
+function anterior() {
+    actual = (actual - 1 + destinos.length) % destinos.length;
+    mostrar(actual);
+}
+
+mostrar(0);
+setInterval(siguiente, 10000);
+
+</script>
+</body>
+</html>

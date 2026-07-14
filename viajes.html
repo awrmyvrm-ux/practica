@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Viajes</title>
+<style>
+    .viajes{
+    min-height:100vh;
+    padding:140px 80px;
+    background:linear-gradient(
+        rgba(5,20,40,.85),
+        rgba(5,20,40,.85)
+    ),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600");
+
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.viajes h1{
+    text-align:center;
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.viajes .subtitulo{
+    text-align:center;
+    font-size:20px;
+    color:#dcdcdc;
+    margin-bottom:60px;
+}
+
+.contenedor-viajes{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+.destino{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:25px;
+    overflow:hidden;
+    transition:.5s;
+    box-shadow:0 15px 30px rgba(0,0,0,.3);
+}
+
+.destino:hover{
+    transform:translateY(-15px);
+}
+
+.destino img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.info{
+    padding:25px;
+}
+
+.info h2{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.info p{
+    line-height:1.7;
+    color:#e5e5e5;
+    margin-bottom:25px;
+}
+
+.info button{
+    padding:14px 30px;
+    border:none;
+    border-radius:30px;
+    background:#ffc107;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.info button:hover{
+    transform:scale(1.05);
+}
+header{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    max-width:1200px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 40px;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:60px;
+
+    z-index:1000;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:white;
+}
+
+.menu{
+    display:flex;
+    gap:15px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    transition:.4s;
+    font-weight:600;
+}
+
+.menu a:hover{
+    background:rgba(255,255,255,.15);
+    transform:translateY(-3px);
+}
+
+.menu .activo{
+    background:#ffc107;
+    color:#000;
+    box-shadow:0 0 20px rgba(255,193,7,.6);
+}
+.menu a{
+    position:relative;
+}
+
+.menu a::after{
+    content:"";
+    position:absolute;
+
+    width:0;
+    height:3px;
+
+    left:50%;
+    bottom:5px;
+
+    background:#ffc107;
+
+    transition:.4s;
+    transform:translateX(-50%);
+}
+
+.menu a:hover::after{
+    width:60%;
+}
+</style>
+</head>
+<body>
+
+<header>
+
+    <div class="logo">Destinos Turísticos</div>
+
+    <nav class="menu">
+
+        <a href="index.html" class="activo">Inicio</a>
+
+        <a href="viajes.html">Viajes</a>
+
+        <a href="contacto.html">Contacto</a>
+
+    </nav>
+
+</header>
+
+<section class="viajes">
+
+    <h1>Explora Ecuador</h1>
+
+    <p class="subtitulo">
+        Vive experiencias inolvidables en los destinos más hermosos del país.
+    </p>
+
+    <div class="contenedor-viajes">
+
+        <div class="destino">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIIBO1C24rueTa7P1oue3UFz42Dkr9awG5JId1JOjeEQ&s=10?w=800">
+
+            <div class="info">
+                <h2>playa tarqui</h2>
+
+                <p>
+                    Es famosa por su fuerte tradición pesquera, su famoso mercado de mariscos
+                </p>
+
+                <a href="contacto.html">
+                    <button>Reservar</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="destino">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnG9p3IHd8hVagATFho4DsaGttuVADmjhcp8MHpEdLaw&s=10?w=800">
+
+            <div class="info">
+                <h2>cuenca</h2>
+
+                <p>
+                   El nombre Cuenca corresponde a dos lugares principales y muy conocidos. Dependiendo de si te refieres a España o a Ecuador, pertenece a una provincia diferente: 
+
+                </p>
+
+                <a href="contacto.html">
+                    <button>Reservar</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="destino">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOhg8LYPxhmKnl-mfBrjaiAtZULRrNyy_WKeaW6XgzWw&s=10?w=800">
+
+            <div class="info">
+                <h2>montañita</h2>
+
+                <p>
+                    Montañita está ubicada en la provincia de Santa Elena, en la costa de Ecuador. Pertenece a la parroquia Manglaralto, dentro del cantón Santa Elena, y es mundialmente famosa por ser un destino internacional para surfistas, mochileros y amantes de la aventura
+                </p>
+
+                <a href="contacto.html">
+                    <button>Reservar</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
